@@ -46,19 +46,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ajudantes\ParserArquivoDesconto.cs" />
+    <Compile Include="Ajudantes\ParserArquivoListaProdutos.cs" />
+    <Compile Include="Ajudantes\ParserArquivoOrdemCompra.cs" />
     <Compile Include="Ajudantes\Util.cs" />
     <Compile Include="Constantes.cs" />
-    <Compile Include="Controlador\ControladorDesconto.cs" />
-    <Compile Include="Controlador\ControladorFatura.cs" />
-    <Compile Include="Controlador\ControladorListaProdutos.cs" />
-    <Compile Include="Controlador\ControladorOrdemCompra.cs" />
-    <Compile Include="Entidade\Desconto.cs" />
-    <Compile Include="Entidade\DetalheFatura.cs" />
-    <Compile Include="Entidade\Fatura.cs" />
-    <Compile Include="Entidade\OrdemCompra.cs" />
-    <Compile Include="Entidade\ListaProduto.cs" />
-    <Compile Include="Entidade\Pedido.cs" />
-    <Compile Include="Entidade\Produto.cs" />
+    <Compile Include="Controlador\IControladorFatura.cs" />
+    <Compile Include="Controlador\IControladorListaProdutos.cs" />
+    <Compile Include="Controlador\IControladorDesconto.cs" />
+    <Compile Include="Controlador\IControladorOrdemCompra.cs" />
+    <Compile Include="Controlador\Impl\ControladorDesconto.cs" />
+    <Compile Include="Controlador\Impl\ControladorFatura.cs" />
+    <Compile Include="Controlador\Impl\ControladorListaProdutos.cs" />
+    <Compile Include="Controlador\Impl\ControladorOrdemCompra.cs" />
+    <Compile Include="Modelos\Desconto.cs" />
+    <Compile Include="Modelos\DetalheFatura.cs" />
+    <Compile Include="Modelos\Fatura.cs" />
+    <Compile Include="Modelos\OrdemCompra.cs" />
+    <Compile Include="Modelos\ListaProduto.cs" />
+    <Compile Include="Modelos\Pedido.cs" />
+    <Compile Include="Modelos\Produto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

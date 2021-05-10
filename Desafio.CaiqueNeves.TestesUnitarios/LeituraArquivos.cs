@@ -16,13 +16,17 @@ namespace Desafio.CaiqueNeves.TestesUnitarios
         static OrdemCompra ordemCompra = new OrdemCompra();
         static Fatura fatura = new Fatura();
         static ControladorFatura controladorFatura = new ControladorFatura();
+        static IControladorListaProdutos _controladorListaProdutos;
+        static IControladorOrdemCompra _controladorOrdemCompra;
+        static IControladorDesconto _controladorDesconto;
+        static IControladorFatura _controladorFatura;
 
         [TestMethod]
         public void TestLeituraArquivoProduto()
         {
             string path = @"D:\TFS\cfsn\desafio-042021-caiqueneves\documentos\ListaProdutos.txt";
-            ControladorListaProdutos controladorListaProdutos = new ControladorListaProdutos();
-            produto = controladorListaProdutos.LeituraArquivoProduto(path);
+           
+            produto = _controladorListaProdutos.RetornarListaProduto(path);
 
             Assert.IsTrue(produto != null);
         }
@@ -31,9 +35,8 @@ namespace Desafio.CaiqueNeves.TestesUnitarios
         public void TestLeituraArquivoDesconto()
         {
             string path = @"D:\TFS\cfsn\desafio-042021-caiqueneves\documentos\ListaDescontos.txt";
-            ControladorDesconto controladorDesconto = new ControladorDesconto();
-            listaDescontos = controladorDesconto
-                .RetornarListaDesconto(path);
+            
+            listaDescontos = _controladorDesconto.RetornarListaDesconto(path);
 
             Assert.IsTrue((listaDescontos.Count > 0) || (listaDescontos.Count == 0),"Nesse caso a lista de desconto pode ter desconto ou não ter");
         }
@@ -42,8 +45,8 @@ namespace Desafio.CaiqueNeves.TestesUnitarios
         public void TestLeituraArquivoOrdemCompra()
         {
             string path = @"D:\TFS\cfsn\desafio-042021-caiqueneves\documentos\ListaOrdemCompra.txt";
-            ControladorOrdemCompra controladorOrdemCompra = new ControladorOrdemCompra();
-            ordemCompra = controladorOrdemCompra.LeituraArquivoOrdemCompra(path);
+            
+            ordemCompra = _controladorOrdemCompra.RetornarListaOrdemCompra(path);
 
             Assert.IsTrue(ordemCompra != null,"O Objeto Ordem Compra estava sem os valores");
         }
@@ -51,18 +54,10 @@ namespace Desafio.CaiqueNeves.TestesUnitarios
         [TestMethod]
         public void TestGeracaoFatura()
         {
-            fatura = controladorFatura.RetornarFaturas(produto, listaDescontos, ordemCompra);
+            string path = @"D:\TFS\cfsn\desafio-042021-caiqueneves\documentos";
+            int retorno = _controladorFatura.GravarFatura(produto, listaDescontos, ordemCompra, path);
             
-            Assert.IsTrue(fatura != null,"O Objeto Fatura estava sem os valores");
-        }
-
-        [TestMethod]
-        public void TestGeracaoFaturaTXT()
-        {
-                string path = @"D:\TFS\cfsn\desafio-042021-caiqueneves\documentos";
-                int a = controladorFatura.GravarArquivo(fatura, path);
-                Assert.IsTrue(a == 1);
-            
+            Assert.IsTrue(retorno > 0,"O Objeto Fatura estava sem os valores");
         }
     }
 }

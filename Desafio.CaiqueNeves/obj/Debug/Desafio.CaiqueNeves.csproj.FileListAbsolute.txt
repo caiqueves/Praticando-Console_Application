@@ -20,3 +20,11 @@ D:\TFS\cfsn\desafio-042021-caiqueneves\Desafio.CaiqueNeves\obj\Debug\Desafio.Cai
 D:\TFS\cfsn\desafio-042021-caiqueneves\Desafio.CaiqueNeves\obj\Debug\Desafio.CaiqueNeves.pdb
 D:\TFS\cfsn\desafio-042021-caiqueneves\Desafio.CaiqueNeves\obj\Debug\Desafio.CaiqueNeves.csprojAssemblyReference.cache
 D:\TFS\cfsn\desafio-042021-caiqueneves\Desafio.CaiqueNeves\bin\Debug\Desafio.CaiqueNeves.xml
+D:\Cursos\Praticando-Console_Application\Desafio.CaiqueNeves\bin\Debug\Desafio.CaiqueNeves.exe.config
+D:\Cursos\Praticando-Console_Application\Desafio.CaiqueNeves\bin\Debug\Desafio.CaiqueNeves.xml
+D:\Cursos\Praticando-Console_Application\Desafio.CaiqueNeves\bin\Debug\Desafio.CaiqueNeves.exe
+D:\Cursos\Praticando-Console_Application\Desafio.CaiqueNeves\bin\Debug\Desafio.CaiqueNeves.pdb
+D:\Cursos\Praticando-Console_Application\Desafio.CaiqueNeves\obj\Debug\Desafio.CaiqueNeves.csprojAssemblyReference.cache
+D:\Cursos\Praticando-Console_Application\Desafio.CaiqueNeves\obj\Debug\Desafio.CaiqueNeves.csproj.CoreCompileInputs.cache
+D:\Cursos\Praticando-Console_Application\Desafio.CaiqueNeves\obj\Debug\Desafio.CaiqueNeves.exe
+D:\Cursos\Praticando-Console_Application\Desafio.CaiqueNeves\obj\Debug\Desafio.CaiqueNeves.pdb
