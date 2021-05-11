@@ -2,20 +2,14 @@
 using Desafio.CaiqueNeves.Entidade;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Desafio.CaiqueNeves.Controlador
 {
-    public class ControladorFatura : IControladorFatura
+    public class ControladorFatura
     {
-        public ControladorFatura()
-        {
-
-        }
+        
 
         public int GravarFatura(ListaProduto listaProduto, List<Desconto> listaDescontos,OrdemCompra OrdemCompras, string path)
         {
@@ -35,7 +29,7 @@ namespace Desafio.CaiqueNeves.Controlador
                     {
                         var pedido = OrdemCompras.pedidos[c];
 
-                        int totalFatura = calcularTotalFatura(listaProduto, listaDescontos, pedido);
+                        int totalFatura = CalcularTotalFatura(listaProduto, listaDescontos, pedido);
                         var detalheFatura = new DetalheFatura(pedido.Id, pedido.QuantidadeItens, totalFatura);
                         
                         listaDetalhes.Add(detalheFatura);
@@ -55,7 +49,7 @@ namespace Desafio.CaiqueNeves.Controlador
             }
         }
 
-        private static int calcularTotalFatura(ListaProduto listaProduto, List<Desconto> listaDescontos, Pedido pedido)
+        private static int CalcularTotalFatura(ListaProduto listaProduto, List<Desconto> listaDescontos, Pedido pedido)
         {
             var produtosItens = pedido.ListaProdutos.Distinct();
             var totalFaturaPar = 0;

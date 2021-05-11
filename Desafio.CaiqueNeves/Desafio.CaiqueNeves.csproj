@@ -51,10 +51,6 @@
     <Compile Include="Ajudantes\ParserArquivoOrdemCompra.cs" />
     <Compile Include="Ajudantes\Util.cs" />
     <Compile Include="Constantes.cs" />
-    <Compile Include="Controlador\IControladorFatura.cs" />
-    <Compile Include="Controlador\IControladorListaProdutos.cs" />
-    <Compile Include="Controlador\IControladorDesconto.cs" />
-    <Compile Include="Controlador\IControladorOrdemCompra.cs" />
     <Compile Include="Controlador\Impl\ControladorDesconto.cs" />
     <Compile Include="Controlador\Impl\ControladorFatura.cs" />
     <Compile Include="Controlador\Impl\ControladorListaProdutos.cs" />

@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Desafio.CaiqueNeves.Entidade;
 using Desafio.CaiqueNeves.Controlador;
@@ -8,23 +7,20 @@ namespace Desafio.CaiqueNeves
 {
     public class Program
     {
-        private static readonly IControladorDesconto _controladorDesconto;
-        private static readonly IControladorListaProdutos _controladorListaProdutos;
-        private static readonly IControladorOrdemCompra _controladorOrdemCompra;
-        private static readonly IControladorFatura _controladorFatura;
-
         static ListaProduto listaProduto;
-        static List<Desconto> listaDescontos;
-        static OrdemCompra OrdemCompras;
+         static List<Desconto> listaDescontos;
+         static OrdemCompra OrdemCompras;
 
-        public Program()
-        {
+        public static ControladorListaProdutos ControladorListaProdutos { get; }
 
-        }
+        public static ControladorDesconto ControladorDesconto { get; }
+
+        public static ControladorOrdemCompra ControladorOrdemCompra { get; }
+
+        public static ControladorFatura ControladorFatura { get; }
 
         public static void Main(string[] args)
         {
-           
             try
             {
                 string cond = "executar";
@@ -43,19 +39,19 @@ namespace Desafio.CaiqueNeves
                         case 1:
 
                             Console.WriteLine("Informe o endereço do arquivo da lista de produtos:");
-                            listaProduto = _controladorListaProdutos.RetornarListaProduto(Console.ReadLine());
+                            listaProduto = ControladorListaProdutos.RetornarListaProduto(Console.ReadLine());
 
                             Console.WriteLine("Informe o endereço do arquivo da lista de descontos:");
-                            listaDescontos = _controladorDesconto.RetornarListaDesconto(Console.ReadLine());
+                            listaDescontos = ControladorDesconto.RetornarListaDesconto(Console.ReadLine());
 
                             Console.WriteLine("Informe o endereço do arquivo da Ordem de compra:");
-                            OrdemCompras = _controladorOrdemCompra.RetornarListaOrdemCompra(Console.ReadLine());
+                            OrdemCompras = ControladorOrdemCompra.RetornarOrdemCompra(Console.ReadLine());
 
                             break;
 
                         case 2:
                             Console.WriteLine("Informe o endereço onde o arquivo invoices será salvo:");
-                            _controladorFatura.GravarFatura(listaProduto, listaDescontos, OrdemCompras, Console.ReadLine());
+                            ControladorFatura.GravarFatura(listaProduto, listaDescontos, OrdemCompras, Console.ReadLine());
 
                             break;
 
@@ -74,7 +70,6 @@ namespace Desafio.CaiqueNeves
             {
                 throw ex;
             }
-
         }
     }
 }

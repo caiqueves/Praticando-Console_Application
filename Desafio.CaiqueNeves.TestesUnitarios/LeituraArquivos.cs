@@ -16,10 +16,10 @@ namespace Desafio.CaiqueNeves.TestesUnitarios
         static OrdemCompra ordemCompra = new OrdemCompra();
         static Fatura fatura = new Fatura();
         static ControladorFatura controladorFatura = new ControladorFatura();
-        static IControladorListaProdutos _controladorListaProdutos;
-        static IControladorOrdemCompra _controladorOrdemCompra;
-        static IControladorDesconto _controladorDesconto;
-        static IControladorFatura _controladorFatura;
+        static ControladorListaProdutos _controladorListaProdutos;
+        static ControladorOrdemCompra _controladorOrdemCompra;
+        static ControladorDesconto _controladorDesconto;
+        static ControladorFatura _controladorFatura;
 
         [TestMethod]
         public void TestLeituraArquivoProduto()
@@ -46,7 +46,7 @@ namespace Desafio.CaiqueNeves.TestesUnitarios
         {
             string path = @"D:\TFS\cfsn\desafio-042021-caiqueneves\documentos\ListaOrdemCompra.txt";
             
-            ordemCompra = _controladorOrdemCompra.RetornarListaOrdemCompra(path);
+            ordemCompra = _controladorOrdemCompra.RetornarOrdemCompra(path);
 
             Assert.IsTrue(ordemCompra != null,"O Objeto Ordem Compra estava sem os valores");
         }

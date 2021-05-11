@@ -8,17 +8,12 @@ using System.Threading.Tasks;
 
 namespace Desafio.CaiqueNeves.Controlador
 {
-    public class ControladorOrdemCompra : IControladorOrdemCompra
+    public class ControladorOrdemCompra
     {
-        private readonly ParserArquivoOrdemCompra _parserArquivoOrdemCompra;
-
-        public ControladorOrdemCompra(ParserArquivoOrdemCompra parserArquivoOrdemCompra)
+        
+        public OrdemCompra RetornarOrdemCompra(string path)
         {
-            _parserArquivoOrdemCompra = parserArquivoOrdemCompra;
-        }
-
-        public OrdemCompra RetornarListaOrdemCompra(string path)
-        {
+            ParserArquivoOrdemCompra _parserArquivoOrdemCompra = new ParserArquivoOrdemCompra();
             return _parserArquivoOrdemCompra.LeituraArquivoOrdemCompra(path);
         }
     }
